@@ -1,5 +1,9 @@
 # test
 
+## 議事録
+* 内容決め
+https://hackmd.io/uJnMvkbWS9yuCLBCr3LFvw
+
 ## 開発用アプリケーションの立ち上げ方
 
 ※全て別ウィンドウで実行のこと
