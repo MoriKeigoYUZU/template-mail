@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue.js sample</title>
+		<link rel="stylesheet" href="style.css" >
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	</head>
+	
+	<body>
+		
+		<h2>配列データを、テーブルで表示する例</h2>
+		<div id="app">
+			<h3>注目されている言語ランキング</h3>
+			<table>
+				<thead>
+				<!-- テーブルヘッダーのくり返し -->
+				<th v-for="item in header">{{ item }}</th>
+				</thead>
+				<tbody>
+					<!-- 1行のくり返し -->
+					<tr v-for="line in ranking">
+						<!-- 1データのくり返し -->
+						<td v-for="item in line">{{ item }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<script>
+			new Vue({
+				el: '#app',
+				data: {
+					header: [ "プログラミング言語",2018,2013,2008,2003,1998],
+					ranking: [
+						['Java',1,2,1,1,16],
+						['C',2,1,2,2,1],
+						['C++',3,4,3,3,2],
+						['Python',4,7,6,11,23],
+						['JavaScript',7,10,8,7,20]
+					]
+				}
+			})
+		</script>
+
+	</body>
+</html>

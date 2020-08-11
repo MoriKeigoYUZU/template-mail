@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue.js sample</title>
+		<link rel="stylesheet" href="style.css" >
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+	</head>
+	
+	<body>
+		<h2>数字がクルクルとアニメーションをしながら値が増えるinput要素の例</h2>
+		<div id="app">
+			<p>値は、{{ animeNumber }}です。</p>
+			<input v-model.number="myNumber" type="number">
+		</div>
+
+
+		<script>
+			new Vue({
+				el: "#app",
+				data: {
+					myNumber: 0,
+					tweenedNumber: 0
+				},
+				watch: {
+					// myNumberを監視して、もし値が変わったら実行する
+					myNumber: function() {
+						// dataのtweenedNumberプロパティを1秒でmyNumberまで増やす
+						TweenMax.to(this.$data, 1, {tweenedNumber: this.myNumber})
+					}
+				},
+				computed: {
+					// tweenedNumberが変わったら、変化中のanimeNumberを算出する
+					animeNumber: function() {
+						return this.tweenedNumber.toFixed(0);
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue.js sample</title>
+		<link rel="stylesheet" href="style.css" >
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	</head>
+	
+	<body>
+		<h2>金額を入力したら、税込み金額を計算する例</h2>
+		<div id="app">
+			<input v-model.number="price" type="number">円
+			<p>消費税込みの金額 {{ taxIncluded }}円</p>
+		</div>
+
+		<script>
+			new Vue({
+				el: '#app',
+				data: {
+					price: 100
+				},
+				computed: {
+					// priceが変わったら、消費税込み金額を算出する
+					taxIncluded: function() {
+						return this.price * 1.08;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

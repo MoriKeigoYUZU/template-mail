@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue.js sample</title>
+		<link rel="stylesheet" href="style.css" >
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	</head>
+	
+	<body>
+		<h2>前後の空白を自動的に削除（トリム）する例</h2>
+		<div id="app">
+			<input v-model.trim="myText">
+			<p>前後の空白を削除「{{ myText }}」</p>
+		</div>
+
+		<script>
+			new Vue({
+				el: '#app',
+				data: {
+					myText:''
+				}
+			})
+		</script>
+	</body>
+</html>

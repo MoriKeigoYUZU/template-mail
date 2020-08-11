@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue.js sample</title>
+		<link rel="stylesheet" href="style.css" >
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	</head>
+	
+	<body>
+		<h2>エンターキーを押したら、アラートを表示する例</h2>
+		<div id="app">
+			<input v-on:keyup.enter="showAlert" v-model="myText">
+			<p>{{ myText }}</p>
+		</div>
+
+		<script>
+			new Vue({
+				el: '#app',
+				data: {
+					myText: 'Hello!'
+				},
+				methods: {
+					showAlert: function() {
+						alert("Enterキーを押しました。");
+					}				
+				}
+			})
+		</script>
+	</body>
+</html>

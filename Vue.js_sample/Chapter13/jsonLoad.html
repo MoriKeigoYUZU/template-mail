@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue.js sample</title>
+		<link rel="stylesheet" href="style.css" >
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	</head>
+
+	<body>
+		<h2>JSONを読み込む例（JavaScript）</h2>
+		<input type="file" id="loader">
+		<script>
+			var obj1 = document.getElementById("loader");
+			obj1.addEventListener("change", loadFile,false);
+			function loadFile(e) {
+				file = e.target.files[0]
+				if (file) {
+					var reader = new FileReader();
+					reader.onload = function(e){
+						console.log(">>>"+e.target.result);
+						json = JSON.parse(e.target.result);
+						console.log(">>>"+ json[0].title);
+						console.log(">>>"+ json[0].body);
+					}
+					reader.readAsText(file);
+				}
+			}
+		</script>
+	</body>
+
+</html>

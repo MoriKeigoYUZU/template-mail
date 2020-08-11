@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>vue.js sample</title>
+		
+		<link rel="stylesheet" href="style.css" >
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+
+	</head>
+	
+	<body>
+		<h2>コンポーネントに値を渡す例</h2>
+		<div id="app">
+			<my-component my-name="桃太郎"></my-component>
+			<my-component my-name="浦島太郎"></my-component>
+			<my-component></my-component>
+		</div>
+		
+		<script>
+			var MyComponent = {
+				template: '<p class="my-comp">私は、{{ myName }}です。</p>',
+				props: {
+					myName: String
+				},
+				created: function () {	// インスタンスが作成された後に実行されます。
+					if (this.myName == null) {
+						this.myName = "名無しの権兵衛";
+					}
+				}
+			}
+	
+			new Vue({
+				el: '#app',
+				components: {
+					'my-component': MyComponent
+				}
+			})
+		</script>
+
+		<style>
+			.my-comp {
+				width: 300px;
+				background-color: #ffffe0;
+				border: solid;
+				border-color: darkorange;
+				border-radius: 8px;
+				padding: 8px;
+			}
+		</style>
+		
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue.js sample</title>
+		<link rel="stylesheet" href="style.css" >
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	</head>
+	
+	<body>
+		<h2>入力文字を監視して、禁止文字が入力されたらアラートを出す例</h2>
+		<div id="app">
+			<p>禁止文字は、「{{ forbiddenText }}」</p>
+			<textarea  v-model="inputText"></textarea>
+		</div>
+
+		<script>
+			new Vue({
+				el: '#app',
+				data: {
+					forbiddenText: 'だめ',
+					inputText: '今日は、天気です。'
+				},
+				watch: {
+					// 入力された文字列を監視する
+					inputText: function(){
+						var pos = this.inputText.indexOf(this.forbiddenText);
+						if (pos >= 0) {
+							alert(this.forbiddenText + "は、入力できません。");
+							// 入力文字列から禁止文字を削除する
+							this.inputText = this.inputText.substr(0,pos);
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
