@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue.js sample</title>
+		<link rel="stylesheet" href="style.css" >
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	</head>
+
+   <body>
+		<h2>Google Chartsで円グラフを表示させる例</h2>
+		<h3>好きなランチ投票</h3>
+		<div id="chart_div" style="height: 500px;"></div>
+
+		<script>
+			// グラフに使うデータ
+			 var orgdata = [
+				['種類', '個数'],
+				['幕の内', 3], ['カルビ弁当', 4], [ 'オムライス', 5],
+				['冷やし中華', 1], ['ビビンバ丼', 3], [ 'ざるそば', 1]
+			 ];
+	
+			google.charts.load('current', {packages: ['corechart']});
+			google.charts.setOnLoadCallback(drawBasic);
+	
+			// グラフを表示する関数
+			function drawBasic() {
+				var data = google.visualization.arrayToDataTable(orgdata);
+				var options = {title: '好きなランチ',"is3D": true};
+				var chart = new google.visualization.PieChart(
+					document.getElementById('chart_div'));
+				chart.draw(data, options);
+			}
+		</script>
+	</body>
+</html>

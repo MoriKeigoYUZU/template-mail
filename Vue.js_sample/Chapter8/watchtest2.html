@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue.js sample</title>
+		<link rel="stylesheet" href="style.css" >
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	</head>
+	
+	<body>
+		<h2>残りの秒数を監視して表示し、0秒になったらアラートを出す例</h2>
+		<div id="app">
+			<p>あと、{{ restSec }}秒<br>
+			<button v-on:click="startTimer">START</button>
+		</div>
+
+		<script>
+			new Vue({
+				el: '#app',
+				data: {
+					restSec: 5,
+					timerObj:null,
+				},
+				methods: {
+					startTimer:function() {
+						// 残り5秒
+						this.restSec = 5;
+						// タイマースタート。1秒(1000ミリ秒）ごとに、1秒減らす
+						this.timerObj = setInterval(()=> { this.restSec-- }, 1000)
+					}
+				},
+				watch: {
+					// 残り秒数を監視する
+					restSec: function() {
+						// 0秒以下になったらアラート＆タイマー停止
+						if (this.restSec <= 0) {
+							alert("制限時間です。");
+							clearInterval(this.timerObj);
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

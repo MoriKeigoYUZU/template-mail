@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue.js sample</title>
+		<link rel="stylesheet" href="style.css" >
+	</head>
+	
+	<body>
+		<h2>TweenMaxのテスト</h2>
+		<button id="movebtn" type="button" onclick="myMove()">移動</button>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+		<script>
+			function myMove() {
+				// movebtnのxプロパティを1秒で500に増やす
+				TweenMax.to('#movebtn', 1, {x: "500px"} );
+			}
+		</script>
+	</body>
+</html>

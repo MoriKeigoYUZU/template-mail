@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue.js sample</title>
+		<link rel="stylesheet" href="style.css" >
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	</head>
+
+	<body>
+		<h2>JSONを読み込む例（Vue.js）</h2>
+		<div id="app">
+			<input type="file" v-on:change="onFileChange">
+			<p>読み込みデータ＝{{ loadData }}</p>
+		</div>
+		<script>
+			new Vue({
+				el: '#app',
+				data:{
+					loadData:'',
+				},
+				methods: {
+					onFileChange: function(e) {      
+						file = e.target.files[0]
+						if (file) {
+							var reader = new FileReader()
+							var vm = this;
+							reader.onload = function(e){
+								json = JSON.parse(e.target.result);
+								vm.loadData = json;
+							}
+							reader.readAsText(file)
+						}
+					}
+				}
+			});
+		</script>
+	</body>
+
+</html>

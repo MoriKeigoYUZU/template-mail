@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue.js sample</title>
+		<link rel="stylesheet" href="style.css" >
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	</head>
+	
+	<body>
+		<h2>リストの並びが移動しながら変わるアニメーションの例</h2>
+		<div id="app">
+			<transition-group>
+				<li v-for="item in dataArray" v-bind:key="item"> {{item}}</li>
+			</transition-group>
+			<button v-on:click="sortData">ソートする</button>
+			<button v-on:click="shuffleData">シャッフルする</button>
+		</div>
+		
+		<script>
+			new Vue({
+				el: "#app",
+				data: {
+					dataArray:['one','two','three','four','five']
+				},
+				methods: {
+					sortData: function() {
+						this.dataArray.sort(function(a,b) {
+							if (a < b) return -1;
+							if (a > b) return 1;
+							return 0;
+						});
+					},
+					shuffleData: function() {
+						var buffer = [];
+						var len = this.dataArray.length;
+						for (var i=len; len>0; len--) {
+							var r = Math.floor(Math.random() * len);
+							buffer.push(this.dataArray[r]);
+							this.dataArray.splice(r, 1);
+						}
+						this.dataArray = buffer;
+					},
+				}
+			})
+		</script>
+		
+		<style>
+			/* 移動トランジションにかかる秒数 */
+			.v-move {
+				transition: 0.5s;
+			}
+		</style>
+	</body>
+</html>

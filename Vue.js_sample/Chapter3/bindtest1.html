@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue.js sample</title>
+		<link rel="stylesheet" href="style.css" >
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	</head>
+	
+	<body>
+		<h2>画像を指定する例</h2>
+		<div id="app">
+			<img src="face1.png">直接指定</img><p>
+			<img v-bind:src="fileName">v-bindで指定</img>
+		</div>
+
+		<script>
+			new Vue({
+				el: '#app',
+				data: {
+					fileName:'face1.png'
+				}
+			})
+		</script>
+	</body>
+</html>

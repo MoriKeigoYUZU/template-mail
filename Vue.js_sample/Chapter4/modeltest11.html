@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue.js sample</title>
+		<link rel="stylesheet" href="style.css" >
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	</head>
+	
+	<body>
+		<h2>入力を自動的に数値に変換する例</h2>
+		<div id="app">
+			<input v-model.number="myNumber" type="number">
+			<p>100を足して表示「{{ 100 + myNumber }}」</p>
+		</div>
+
+		<script>
+			new Vue({
+				el: '#app',
+				data: {
+					myNumber:0,
+				}
+			})
+		</script>
+	</body>
+</html>

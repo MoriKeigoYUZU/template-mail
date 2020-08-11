@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>vue.js sample</title>
+		
+		<link rel="stylesheet" href="style.css" >
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+
+	</head>
+	
+	<body>
+		<h2>それぞれ別々にカウントするコンポーネントの例</h2>
+		<div id="app">
+			<my-component></my-component>
+			<my-component></my-component>
+			<my-component></my-component>
+		</div>
+
+		<script>
+			var MyComponent = {
+				template: '<p class="my-comp">カウンター　<button v-on:click="addOne">追加</button> {{ count }}</p>',
+				data: function () {
+					return {
+						count: 0
+					}
+				},
+				methods: {
+					addOne: function() {
+						this.count++;
+					}
+				},
+			}
+			new Vue({
+				el: '#app',
+				components: {
+					'my-component': MyComponent
+				}
+			})
+		</script>
+
+		<style>
+			.my-comp {
+				width: 300px;
+				background-color: #ffffe0;
+				border: solid;
+				border-color: darkorange;
+				border-radius: 8px;
+				padding: 8px;
+			}
+		</style>
+		
+	</body>
+</html>

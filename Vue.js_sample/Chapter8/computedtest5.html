@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue.js sample</title>
+		<link rel="stylesheet" href="style.css" >
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	</head>
+	
+	<body>
+		<h2>赤緑青のスライダーを動かしたら、できた色を表示する例</h2>
+		<div id="app">
+			<p v-bind:style="{backgroundColor: mixColor}"/>{{ mixColor }}</p>
+			<input type="range" v-model="R"  min="0" max="255"/><br>
+			<input type="range" v-model="G"  min="0" max="255"/><br>
+			<input type="range" v-model="B"  min="0" max="255"/><br>
+		</div>
+
+		<script>
+			new Vue({
+				el: "#app",
+				data: {
+					R:255,
+					G:150,
+					B:100
+				},
+				computed: {
+					// RかGかBの値が変わったら、できた色を算出する
+					mixColor: function() {
+						var ans = "RGB("+this.R+","+this.G+","+this.B+")";
+						return ans;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

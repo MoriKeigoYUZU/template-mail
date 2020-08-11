@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue.js sample</title>
+		<link rel="stylesheet" href="style.css" >
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	</head>
+	
+	<body>
+		<h2>1 × 5 〜 10 × 5 を、くり返し表示する例</h2>
+		<div id="app">
+			<ul>
+				<li v-for="n in 10"> {{n}}x5={{n * 5}}</li>
+			</ul>
+		</div>
+
+		<script>
+			new Vue({
+				el: '#app'
+			})
+		</script>
+	</body>
+</html>

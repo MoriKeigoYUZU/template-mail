@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue.js sample</title>
+		<link rel="stylesheet" href="style.css" >
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	</head>
+	
+	<body>
+		<h2>文字を入力すると、その文字を含む項目だけ表示される例</h2>
+		<div id="app">
+			<input v-model="findWord">
+			<ul>
+				<li v-for="item in findItems">{{item}}</li>
+			</ul>
+		</div>
+
+		<script>
+			new Vue({
+				el: "#app",
+				data: {
+					findWord:'',
+					items:['桃太郎','花咲かじいさん','浦島太郎','かぐや姫','かちかち山']
+				},
+				computed: {
+					// this.findWordが変わったら、その文字が含まれるリストを算出する
+					findItems: function() {
+						if (this.findWord) {
+							return this.items.filter(function(value) {
+								return (value.indexOf(this.findWord) > -1);
+							}, this);
+						} else {
+							// this.findWordが空のときは、リストをそのまま返す
+							return this.items;
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

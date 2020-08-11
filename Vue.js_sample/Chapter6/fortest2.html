@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue.js sample</title>
+		<link rel="stylesheet" href="style.css" >
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	</head>
+	
+	<body>
+		<h2>オブジェクトの配列データを、リストで表示する例</h2>
+		<div id="app">
+			<ul>
+				<li v-for="item in objArray">{{ item.name }} ¥{{ item.price }}</li>
+			</ul>
+		</div>
+
+		<script>
+			new Vue({
+				el: '#app',
+				data: {
+					objArray: [
+						{name: 'ジャムパン', price: 100},
+						{name: 'メロンパン', price: 120},
+						{name: 'クロワッサン', price: 150}
+					]
+				}
+			})
+		</script>
+	</body>
+</html>
