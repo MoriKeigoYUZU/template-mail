@@ -1,5 +1,11 @@
 <template>
-    <p>MyInformation</p>
+    <v-container class="grey lighten-5">
+        <v-row>
+            <v-col>
+                <p>MyInformation</p>
+            </v-col>
+        </v-row>
+    </v-container>
 </template>
 
 <script>
