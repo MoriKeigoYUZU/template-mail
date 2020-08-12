@@ -2,6 +2,9 @@
   <v-container>
     <v-row class="text-center">
       <v-col cols="12">
+        <router-link id="router-link" to="/DestinationInformation">
+          MORI KEIGO もり けいご
+        </router-link>
         <v-img
           :src="require('../assets/logo.svg')"
           class="my-3"
