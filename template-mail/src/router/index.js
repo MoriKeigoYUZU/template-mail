@@ -5,6 +5,9 @@ import Top from '../pages/Top'
 import MyInformation from '../pages/MyInformation'
 import DestinationInformation from '../pages/DestinationInformation'
 
+import Main from '../pages/Main'
+import Props from '../pages/Props'
+
 
 Vue.use(VueRouter)
 
@@ -23,6 +26,16 @@ const routes = [
     path: '/DestinationInformation',
     name: 'DestinationInformation',
     component: DestinationInformation
+  },
+  {
+    path: '/Main',
+    name: 'Main',
+    component: Main
+  },
+  {
+    path: '/Props',
+    name: 'Props',
+    component: Props
   },
 ]
 
