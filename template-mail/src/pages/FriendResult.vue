@@ -25,9 +25,9 @@
               <v-expansion-panel-header>いつでも使える挨拶文</v-expansion-panel-header>
               <v-expansion-panel-content>
                 <p>
-                  <br />・こんにちは
-                  <br />・お元気ですか？
-                  <br />・お久しぶりです
+                  <br>・こんにちは
+                  <br>・お元気ですか？
+                  <br>・お久しぶりです
                 </p>
               </v-expansion-panel-content>
             </v-expansion-panel>
@@ -36,9 +36,9 @@
               <v-expansion-panel-header>久しぶり挨拶文</v-expansion-panel-header>
               <v-expansion-panel-content>
                 <p>
-                  <br />・久しぶり！仕事忙しそうだけど、元気にしてる？
-                  <br />・久しぶりだね！前に xxxx って言ってたけどその後大丈夫？
-                  <br />・お久しぶり！こっちは xxxx だけど、そっちはどう？
+                  <br>・久しぶり！仕事忙しそうだけど、元気にしてる？
+                  <br>・久しぶりだね！前に xxxx って言ってたけどその後大丈夫？
+                  <br>・お久しぶり！こっちは xxxx だけど、そっちはどう？
                 </p>
               </v-expansion-panel-content>
             </v-expansion-panel>
@@ -47,8 +47,8 @@
               <v-expansion-panel-header>返信用挨拶文</v-expansion-panel-header>
               <v-expansion-panel-content>
                 <p>
-                  <br />・メールくれてありがとう。
-                  <br />・忙しいなか返信くれてありがとう。
+                  <br>・メールくれてありがとう。
+                  <br>・忙しいなか返信くれてありがとう。
                 </p>
               </v-expansion-panel-content>
             </v-expansion-panel>
@@ -57,8 +57,8 @@
               <v-expansion-panel-header>問いかけ対応用文</v-expansion-panel-header>
               <v-expansion-panel-content>
                 <p>
-                  <br />・そうなんだ、 xxxx について気になってたから安心したよ。
-                  <br />・元気そうで何よりだよ。前に xxxx って言ってたから気になって連絡してみたんだ。
+                  <br>・そうなんだ、 xxxx について気になってたから安心したよ。
+                  <br>・元気そうで何よりだよ。前に xxxx って言ってたから気になって連絡してみたんだ。
                 </p>
               </v-expansion-panel-content>
             </v-expansion-panel>
@@ -67,9 +67,9 @@
               <v-expansion-panel-header>結びの言葉</v-expansion-panel-header>
               <v-expansion-panel-content>
                 <p>
-                  <br />・それでは、またね
-                  <br />・お返事待ってます
-                  <br />・お体に気をつけて、また会うことを楽しみにしています。
+                  <br>・それでは、またね
+                  <br>・お返事待ってます
+                  <br>・お体に気をつけて、また会うことを楽しみにしています。
                 </p>
               </v-expansion-panel-content>
             </v-expansion-panel>
