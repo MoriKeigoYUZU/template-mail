@@ -3,7 +3,7 @@
 
         <v-row id="center">
             <v-col cols="0" sm="2" md="2" lg="2"></v-col>
-            <v-col  cols="12" sm="8" md="8" lg="8">
+            <v-col cols="12" sm="8" md="8" lg="8">
                 <p>自分の情報</p>
             </v-col>
             <v-col cols="0" sm="2" md="2" lg="2"></v-col>
@@ -50,20 +50,16 @@
             <v-col cols="0" sm="2" md="2" lg="2"></v-col>
         </v-row>
 
-        <v-row>
-            <v-col>
-                <div>
-                    <p>{{My.name}}</p>
-                    <p>{{My.department}}</p>
-                    <p>{{My.email}}</p>
-                    <p>{{My.tel}}</p>
-
-
-                    <!--<p>{{Destination.name}}</p>-->
-
-                </div>
-            </v-col>
-        </v-row>
+        <!--<v-row>-->
+        <!--<v-col>-->
+        <!--<div>-->
+        <!--<p>{{My.name}}</p>-->
+        <!--<p>{{My.department}}</p>-->
+        <!--<p>{{My.email}}</p>-->
+        <!--<p>{{My.tel}}</p>-->
+        <!--</div>-->
+        <!--</v-col>-->
+        <!--</v-row>-->
     </v-container>
 </template>
 
@@ -104,7 +100,8 @@
     methods: {
       submit() {
         this.$store.commit('MyUpdata', this.items);
-        // this.$store.commit('flagUpdata', 2);
+        this.$store.commit('myFlag');
+        this.$store.commit('pagesFlag', 2);
         this.$refs.observer.validate();
 
       },
@@ -121,14 +118,17 @@
         return this.$store.getters['My']
       },
 
-
-      counter() {
-        return this.$store.getters['counter']
-      },
-
       Destination() {
         return this.$store.getters['Destination']
-      }
+      },
+
+      myFlag() {
+        return this.$store.getters['myFlag']
+      },
+
+      pagesFlag() {
+        return this.$store.getters['pagesFlag']
+      },
 
     },
   };

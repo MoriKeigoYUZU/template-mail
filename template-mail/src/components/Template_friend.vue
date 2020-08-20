@@ -1,19 +1,17 @@
 <template>
-    <v-app>
-        <v-container class="lighten-5">
-          <p>こんにちは。</p>
-          <p>お元気でしたか？</p>
-          <p>{{My.name}}です。</p>
-          <br><br>
-          <p>本文</p>
-          <br><br>
-          <p>-------------------------------------</p>
-          <p>{{My.name}}</p>
-          <p>Mail : {{My.email}}</p>
-          <p>Tel  : {{My.tel}}</p>
-          <p>-------------------------------------</p>
-        </v-container>
-    </v-app>
+    <p>
+        こんにちは。<br>
+        お元気でしたか？<br>
+        {{My.name}}です。<br>
+        <br><br>
+        本文<br>
+        <br><br>
+        -------------------------------------<br>
+        {{My.name}}<br>
+        Mail : {{My.email}}<br>
+        Tel : {{My.tel}}<br>
+        -------------------------------------<br>
+    </p>
 </template>
 
 <script>

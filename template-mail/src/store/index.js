@@ -7,48 +7,63 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   // const store = new Vuex.Store({
   state: {
-    counter: 1,
 
-    flag: 1,
+    pagesFlag: 1,
+    myFlag: 0,
+    destinationFlag: 0,
+
+    buttonColor: {
+      My: "grey",
+      Destination: "white",
+    },
 
     My: {
-      name: '確認用',
-      department: '相手先',
-      tel: '0800606006060',
-      email: 'kkk@gmail.com'
+      name: '',
+      department: '',
+      tel: '',
+      email: ''
     },
 
     Destination: {
-      name: 'mormormormo',
-      department: 'ds',
-      select: 'gre'
+      name: '',
+      department: '',
+      select: ''
     }
 
   },
 
   getters: {
-    counter(state) {
-      return state.counter
+
+    myFlag(state) {
+      return state.myFlag
     },
 
-    flag(state) {
-      return state.flag
+
+    destinationFlag(state) {
+      return state.destinationFlag
+    },
+
+
+    buttonColor(state) {
+      return state.buttonColor
     },
 
     My(state) {
       return state.My
-    },
+    }
+    ,
 
     Destination(state) {
       return state.Destination
+    },
+
+    pagesFlag(state) {
+      return state.pagesFlag
     }
 
   },
 
   mutations: {
-    countUp(state) {
-      state.counter++
-    },
 
     MyUpdata(state, items) {
       state.My = items
@@ -58,13 +73,49 @@ export default new Vuex.Store({
       state.Destination = items
     },
 
-    flagUpdata(state, flag) {
-      state.flag = flag
-    }
+    myFlag(state) {
+      state.myFlag = 1;
 
-  },
+      if (state.pagesFlag == 3) {
+        state.pagesFlag = 1
+        state.myFlagFlag = 0
+      }
+    },
 
-  actions: {},
+    destinationFlag(state) {
+      state.destinationFlag = 1
+
+      if (state.pagesFlag == 3) {
+        state.pagesFlag = 2
+        state.destinationFlag = 0
+      }
+
+    },
+
+    pagesFlag(state, items) {
+      state.pagesFlag = items
+      if (state.myFlag == 1 && state.destinationFlag == 1) {
+        state.pagesFlag = 3
+      }
+
+
+      if (state.pagesFlag == 1) {
+        state.buttonColor.My = "grey"
+        state.buttonColor.Destination = "white"
+      }else if(state.pagesFlag == 2){
+        state.buttonColor.My = "white"
+        state.buttonColor.Destination = "grey"
+      }else{
+        state.buttonColor.My = "white"
+        state.buttonColor.Destination = "white"
+      }
+    },
+
+  }
+  ,
+
+  actions: {}
+  ,
 
   modules: {}
 })
