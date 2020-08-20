@@ -5,32 +5,28 @@ Vue.use(Vuex)
 
 // export default new Vuex.Store({
 export default new Vuex.Store({
-// const store = new Vuex.Store({
+  // const store = new Vuex.Store({
   state: {
     counter: 1,
 
     flag: 1,
 
-
     My: {
-      name: "確認用",
-      department: "相手先",
-      tel: "0800606006060",
-      email: "kkk@gmail.com",
+      name: '確認用',
+      department: '相手先',
+      tel: '0800606006060',
+      email: 'kkk@gmail.com'
     },
-
 
     Destination: {
-      name: "mormormormo",
-      department: "ds",
-      select: "gre",
-    },
-
+      name: 'mormormormo',
+      department: 'ds',
+      select: 'gre'
+    }
 
   },
 
   getters: {
-
     counter(state) {
       return state.counter
     },
@@ -45,29 +41,30 @@ export default new Vuex.Store({
 
     Destination(state) {
       return state.Destination
-    },
-
-
+    }
 
   },
 
   mutations: {
-
     countUp(state) {
-      state.counter++;
+      state.counter++
     },
 
-    nameUpdata(state, items) {
-      state.My = items;
+    MyUpdata(state, items) {
+      state.My = items
+    },
+
+    DestinationUpdata(state, items) {
+      state.Destination = items
     },
 
     flagUpdata(state, flag) {
-      state.flag = flag;
+      state.flag = flag
     }
 
   },
 
   actions: {},
 
-  modules: {},
+  modules: {}
 })

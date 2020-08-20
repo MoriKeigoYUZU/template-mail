@@ -102,7 +102,7 @@
 
     methods: {
       submit() {
-        this.$store.commit('nameUpdata', this.items);
+        this.$store.commit('MyUpdata', this.items);
         // this.$store.commit('flagUpdata', 2);
         this.$refs.observer.validate();
 
