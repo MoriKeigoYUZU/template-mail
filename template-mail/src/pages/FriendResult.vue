@@ -13,7 +13,7 @@
         <v-col cols="12">
           <v-card>
             <v-card-title class="headline">テンプレート文</v-card-title>
-            <v-card-subtitle>ここに文章</v-card-subtitle>
+            <v-card-subtitle><Template_friend /></v-card-subtitle>
           </v-card>
         </v-col>
       </v-row>
@@ -82,10 +82,13 @@
 
 
 <script>
+
+import Template_friend from "../components/Template_friend";
+
 export default {
+  components: {Template_friend},
   name: "FriendResult",
   data: () => ({}),
-
   methods: {},
 };
 </script>
