@@ -1,11 +1,12 @@
 <template>
     <v-container class="grey lighten-5">
-        <v-row>
-            <v-col cols="5"></v-col>
-            <v-col cols="2">
-                <p>MyInformation</p>
+
+        <v-row id="center">
+            <v-col cols="0" sm="2" md="2" lg="2"></v-col>
+            <v-col  cols="12" sm="8" md="8" lg="8">
+                <p>自分の情報</p>
             </v-col>
-            <v-col cols="5"></v-col>
+            <v-col cols="0" sm="2" md="2" lg="2"></v-col>
         </v-row>
 
         <v-row>
@@ -38,15 +39,15 @@
             </v-col>
         </v-row>
 
-        <v-row justify="center" align-content="center">
-            <v-col cols="4"></v-col>
-            <v-col cols="2">
+        <v-row justify="center" align-content="center" id="center">
+            <v-col cols="0" sm="2" md="2" lg="2"></v-col>
+            <v-col cols="6" sm="2" md="2" lg="2">
                 <v-btn class="mr-4" @click="submit">submit</v-btn>
             </v-col>
-            <v-col cols="2">
+            <v-col cols="6" sm="2" md="2" lg="2">
                 <v-btn @click="clear">clear</v-btn>
             </v-col>
-            <v-col cols="4"></v-col>
+            <v-col cols="0" sm="2" md="2" lg="2"></v-col>
         </v-row>
 
         <v-row>
@@ -134,4 +135,7 @@
 </script>
 
 <style scoped>
+    #center {
+        text-align: center;
+    }
 </style>
