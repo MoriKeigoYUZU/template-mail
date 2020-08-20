@@ -10,14 +10,14 @@
 
         <v-row>
             <v-col>
-                <v-text-field v-model="name" :counter="20" :rules="nameRules" label="Name" required></v-text-field>
+                <v-text-field v-model="items.name" :counter="20" :rules="nameRules" label="Name" required></v-text-field>
             </v-col>
         </v-row>
 
         <v-row>
             <v-col>
                 <v-text-field
-                        v-model="department"
+                        v-model="items.department"
                         :rules="departmentRules"
                         label="your Department"
                         required
@@ -28,10 +28,10 @@
         <v-row>
             <v-col>
                 <v-select
-                        v-model="select"
-                        :items="items"
+                        v-model="items.select"
+                        :items="items_select"
                         :rules="departmentRules"
-                        label="Item"
+                        label="関係"
                         required
                         @change="$v.select.$touch()"
                         @blur="$v.select.$touch()"
@@ -53,11 +53,9 @@
 
         <v-row>
             <v-col>
-                <p>{{My.name}}</p>
-                <p>{{My.department}}</p>
-                <p>{{My.email}}</p>
-                <p>{{My.tel}}</p>
-                <p>{{this.select}}</p>
+                <p>{{Destination.name}}</p>
+                <p>{{Destination.department}}</p>
+                <p>{{Destination.select}}</p>
             </v-col>
         </v-row>
     </v-container>
@@ -69,29 +67,34 @@
     name: "DestinationInformation",
     data: () => ({
       valid: true,
-      name: "",
+
+      items: {
+        name: "",
+        department: "",
+        select: "",
+      },
+
+      // name: "",
       nameRules: [
         (v) => !!v || "Name is required",
         (v) => (v && v.length <= 20) || "Name must be less than 20 characters",
       ],
 
-      department: "",
+      // department: "",
       departmentRules: [(v) => !!v || "Your Department is required"],
 
-      items: ["上司，目上の人", "身内", "友達"],
-      select: "",
+      items_select: ["上司，目上の人", "身内", "友達"],
+      // select: "",
       selectRules: [],
     }),
 
     methods: {
       submit() {
+        this.$store.commit('DestinationUpdata', this.items);
         this.$refs.observer.validate();
       },
       clear() {
-        this.name = "";
-        this.department = "";
-        this.tel = "";
-        this.email = "";
+        this.items = "";
         this.$refs.observer.reset();
       },
     },
