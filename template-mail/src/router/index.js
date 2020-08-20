@@ -8,7 +8,8 @@ import Result from '../pages/Result'
 import SuperiorResult from '../pages/SuperiorResult'
 import FriendResult from '../pages/FriendResult'
 import RelativeResult from '../pages/RelativeResult'
-
+import Template_superior from '../components/Template_superior'
+import Template_friend from '../components/Template_friend'
 
 Vue.use(VueRouter)
 
@@ -48,6 +49,21 @@ const routes = [
     name: 'RelativeResult',
     component: RelativeResult
   },
+  {
+    path: '/SuperiorResult',
+    name: 'SuperiorResult',
+    component: SuperiorResult
+  },
+  {
+    path: '/Template_superior',
+    name: 'Template_superior',
+    component: Template_superior
+  },
+  {
+    path: '/Template_friend',
+    name: 'Template_friend',
+    component: Template_friend
+  }
 ]
 
 // const router = new VueRouter({
@@ -57,7 +73,6 @@ const routes = [
 // })
 //
 // export default router
-
 
 const router = new VueRouter({
   mode: 'history',

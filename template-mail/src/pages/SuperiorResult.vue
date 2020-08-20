@@ -13,7 +13,7 @@
         <v-col cols="12">
           <v-card>
             <v-card-title class="headline">テンプレート文</v-card-title>
-            <v-card-subtitle>ここに文章</v-card-subtitle>
+            <v-card-subtitle><Template_superior /></v-card-subtitle>
           </v-card>
         </v-col>
       </v-row>
@@ -218,11 +218,14 @@
 
 
 <script>
+
+import Template_superior from "../components/Template_superior";
+
 export default {
+  components: {Template_superior},
   name: "SuperiorResult",
   data: () => ({}),
-
-  methods: {},
+  methods: {}
 };
 </script>
 
