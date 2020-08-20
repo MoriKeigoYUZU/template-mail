@@ -16,21 +16,27 @@
             </v-row>
 
             <v-row justify="center" align-content="center">
-                <v-col cols="0" sm="3" md="3" lg="3"></v-col>
+                <v-col cols="0" sm="2" md="2" lg="2"></v-col>
 
-                <v-col id="center" cols="6" sm="3" md="3" lg="3">
-                    <v-btn :color="iro_m" v-on:click="flag = 1, iro_m = 'grey', iro_d='white'">
+                <v-col id="center" cols="4" sm="3" md="3" lg="3">
+                    <v-btn :color="iro_m" v-on:click="flag = 1, iro_m = 'grey', iro_d='white' , iro_r='white'">
                         自分の情報
                     </v-btn>
                 </v-col>
 
-                <v-col id="center" cols="6" sm="3" md="3" lg="3">
-                    <v-btn :color="iro_d" v-on:click="flag = 2, iro_m = 'white', iro_d='grey'">
+                <v-col id="center" cols="4" sm="2" md="2" lg="2">
+                    <v-btn :color="iro_d" v-on:click="flag = 2, iro_m = 'white', iro_d='grey' , iro_r='white'">
                         相手の情報
                     </v-btn>
                 </v-col>
 
-                <v-col cols="0" sm="3" md="3" lg="3"></v-col>
+                <v-col id="center" cols="4" sm="3" md="3" lg="3">
+                    <v-btn :color="iro_r" v-on:click="flag = 3, iro_m = 'white', iro_d='white' , iro_r='grey'">
+                        結果の情報
+                    </v-btn>
+                </v-col>
+
+                <v-col cols="0" sm="2" md="2" lg="2"></v-col>
             </v-row>
         </v-container>
     </v-app>
@@ -48,6 +54,7 @@
       flag: 1,
       iro_m: "grey",
       iro_d: "white",
+      iro_r: "white",
     }),
 
     methods: {},

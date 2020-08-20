@@ -9,57 +9,45 @@ import SuperiorResult from '../pages/SuperiorResult'
 import FriendResult from '../pages/FriendResult'
 import RelativeResult from '../pages/RelativeResult'
 
-import Main from '../pages/Main'
-import Props from '../pages/Props'
-
 
 Vue.use(VueRouter)
 
-const routes = [{
-        path: '/',
-        name: 'Top',
-        component: Top
-    },
-    {
-        path: '/MyInformation',
-        name: 'MyInformation',
-        component: MyInformation
-    },
-    {
-        path: '/DestinationInformation',
-        name: 'DestinationInformation',
-        component: DestinationInformation
-    },
-    {
-        path: '/Result',
-        name: 'Result',
-        component: Result
-    },
-    {
-        path: '/SuperiorResult',
-        name: 'SuperiorResult',
-        component: SuperiorResult
-    },
-    {
-        path: '/FriendResult',
-        name: 'FriendResult',
-        component: FriendResult
-    },
-    {
-        path: '/RelativeResult',
-        name: 'RelativeResult',
-        component: RelativeResult
-    },
-    {
-        path: '/Main',
-        name: 'Main',
-        component: Main
-    },
-    {
-        path: '/Props',
-        name: 'Props',
-        component: Props
-    },
+const routes = [
+  {
+    path: '/',
+    name: 'Top',
+    component: Top
+  },
+  {
+    path: '/MyInformation',
+    name: 'MyInformation',
+    component: MyInformation
+  },
+  {
+    path: '/DestinationInformation',
+    name: 'DestinationInformation',
+    component: DestinationInformation
+  },
+  {
+    path: '/Result',
+    name: 'Result',
+    component: Result
+  },
+  {
+    path: '/SuperiorResult',
+    name: 'SuperiorResult',
+    component: SuperiorResult
+  },
+  {
+    path: '/FriendResult',
+    name: 'FriendResult',
+    component: FriendResult
+  },
+  {
+    path: '/RelativeResult',
+    name: 'RelativeResult',
+    component: RelativeResult
+  },
 ]
 
 // const router = new VueRouter({
@@ -72,16 +60,16 @@ const routes = [{
 
 
 const router = new VueRouter({
-    mode: 'history',
-    base: process.env.BASE_URL,
-    routes,
-    scrollBehavior(to, from, savedPosition) {
-        if (savedPosition) {
-            return savedPosition
-        } else {
-            return { x: 0, y: 0 }
-        }
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return {x: 0, y: 0}
     }
+  }
 })
 
 export default router
