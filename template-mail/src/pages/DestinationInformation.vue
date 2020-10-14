@@ -11,7 +11,7 @@
 
         <v-row>
             <v-col>
-                <v-text-field v-model="items.name" :counter="20" :rules="nameRules" label="Name"
+                <v-text-field v-model="items.name" :counter="20" :rules="nameRules" label="相手の名前"
                               required></v-text-field>
             </v-col>
         </v-row>
@@ -21,7 +21,7 @@
                 <v-text-field
                         v-model="items.department"
                         :rules="departmentRules"
-                        label="your Department"
+                        label="相手の所属"
                         required
                 ></v-text-field>
             </v-col>
@@ -32,8 +32,8 @@
                 <v-select
                         v-model="items.select"
                         :items="items_select"
-                        :rules="departmentRules"
-                        label="関係"
+                        :rules="relationRules"
+                        label="あなたとの関係"
                         required
                         @change="$v.select.$touch()"
                         @blur="$v.select.$touch()"
@@ -41,13 +41,13 @@
             </v-col>
         </v-row>
 
-        <v-row justify="center" align-content="center">
+        <v-row justify="center" align-content="center" id="center">
             <v-col cols="0" sm="2" md="2" lg="2"></v-col>
             <v-col cols="6" sm="2" md="2" lg="2">
-                <v-btn class="mr-4" @click="submit">submit</v-btn>
+                <v-btn class="mr-4" @click="submit">登録</v-btn>
             </v-col>
             <v-col cols="6" sm="2" md="2" lg="2">
-                <v-btn @click="clear">clear</v-btn>
+                <v-btn @click="clear">取り消し</v-btn>
             </v-col>
             <v-col cols="0" sm="2" md="2" lg="2"></v-col>
         </v-row>
@@ -70,13 +70,14 @@
 
       // name: "",
       nameRules: [
-        (v) => !!v || "Name is required",
-        (v) => (v && v.length <= 20) || "Name must be less than 20 characters",
+        (v) => !!v || "名前を入力してください",
+        (v) => (v && v.length <= 20) || "名前は20文字未満である必要があります",
       ],
 
-      departmentRules: [(v) => !!v || "Your Department is required"],
+      departmentRules: [(v) => !!v || "所属を入力してください"],
 
       items_select: ["上司，目上の人", "身内", "友達"],
+      relationRules: [(v) => !!v || "関係を選択してください"],
       selectRules: [],
     }),
 
