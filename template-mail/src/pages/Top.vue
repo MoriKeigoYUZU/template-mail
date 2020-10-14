@@ -16,6 +16,7 @@
             </v-row>
 
             <v-row justify="center" align-content="center">
+
                 <v-col cols="0" sm="2" md="2" lg="2"></v-col>
 
                 <v-col id="center" cols="6" sm="4" md="4" lg="4">
@@ -32,14 +33,9 @@
                     </v-btn>
                 </v-col>
 
-                <!--<v-col id="center" cols="4" sm="3" md="3" lg="3">-->
-                <!--<v-btn :color="iro_r" v-on:click="pages = 3, iro_m = 'white', iro_d='white' , iro_r='grey'">-->
-                <!--結果の情報-->
-                <!--</v-btn>-->
-                <!--</v-col>-->
-
                 <v-col cols="0" sm="2" md="2" lg="2"></v-col>
             </v-row>
+
         </v-container>
     </v-app>
 </template>
