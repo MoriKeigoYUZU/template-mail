@@ -4,7 +4,7 @@
             <v-row>
                 <v-col cols="0" sm="5" md="5" lg="5"></v-col>
                 <v-col id="center" cols="12">
-                    <p>結果</p>
+                    <h2>結果</h2>
                 </v-col>
                 <v-col cols="0" sm="5" md="5" lg="5"></v-col>
             </v-row>
